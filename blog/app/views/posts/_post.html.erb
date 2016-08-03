@@ -1,2 +1,5 @@
 <div>Title: <%= post.title%></div>
-<div>Body: <%= post.body%></div><br/>  
+<div>Body: <%= post.body%></div><br/>
+<a href='<%=   %>' ></a>
+
+<%= link_to "Comment this!", new_post_comment_path(post.id), class: 'btn btn-default' %>
