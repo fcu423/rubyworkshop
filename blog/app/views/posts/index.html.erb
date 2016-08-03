@@ -1,4 +1,11 @@
-Posts 
+<h1>Posts</h1>
+
+<%- if @message %>
+    <div class="alert alert-success">
+    <%= @message %>
+    </div> 
+<%- end %>
+
 <%- @posts.each do |post| %>
     <%= render "post", post: post %>  
 <%- end %>
