@@ -1,20 +1,26 @@
 class PostsController < ApplicationController
     def index
-        @posts = Post.all
-
-        if params[:created] == "created"
-            @message = "New post created successfully! =]"
-        end
+        @posts = Post.all        
     end
 
     def new
         @post = Post.new
     end
 
+    def show
+        @post = Post.find(params[:id])
+    end
+
+    def destroy
+        
+    end
+
     def create
-        post = Post.new(post_params)
-        post.save
-        redirect_to action: "index", created: "created"
+        @post = Post.new(post_params)
+        if post.save
+            flash[:notice] = "Post created!"
+        end        
+        redirect_to :index unless request.xhr?
     end
 
     private 

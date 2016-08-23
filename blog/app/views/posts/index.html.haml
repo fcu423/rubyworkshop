@@ -1,0 +1,6 @@
+%h1 Posts
+- if flash[:notice]
+  .alert.alert-success
+    = flash[:notice]
+- @posts.each do |post|
+  = render "post", post: post

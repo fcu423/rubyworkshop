@@ -1,0 +1,7 @@
+%div
+  = link_to post.title, post_path(post)
+%div
+  Body: #{post.body}
+%br/
+= link_to "Comment this!", new_post_comment_path(post.id), class: 'btn btn-default'
+= link_to "delete", post_path(post.id), method: :delete, class: 'btn btn-default'

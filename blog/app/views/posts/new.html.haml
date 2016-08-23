@@ -1,0 +1,9 @@
+.row
+  = form_for @post, url: {action: "create"}, remote: true, html: {class: "form-horizontal center js-form-new"} do |form|
+    .form-group
+      = form.label :title, "Title:",class: "col-md-4"
+      = form.text_field :title, class: "form-control"
+    .form-group
+      = form.label :body, "Content:", class: "col-md-4"
+      = form.text_area :body, size: "60x12", class: "form-control"
+    = form.submit "Create", class: "btn btn-default"
